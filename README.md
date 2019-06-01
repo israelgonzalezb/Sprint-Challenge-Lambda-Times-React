@@ -28,10 +28,14 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 
 ## Self-Study/Essay Questions
 
-- [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
-- [ ] Describe a life-cycle event in React?
-- [ ] Explain the details of a Higher Order Component?
+- [x] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+  - PropTypes are used to have the compiler check that each variable holds a certain type of data. If it finds that something is not following the PropTypes rules set by the developer, it will throw an error in the console. PropTypes are important to keep the chaos of larger projects under control. When data is being passed around many components, you want to make sure that you're getting the type of data you need so that your app doesn't exhibit unexpected behavior or breaks if the wrong type of data is fed into the wrong component.
+- [x] Describe a life-cycle event in React?
+  - React class components have methods on them that get called in phases during the lifecycle of the app. These phases are Mounting, Updating and Unmounting. Different lifecycle methods are triggered at different phases of the above, i.e. render, pre-commit and commit. For example, componentDidUpdate is called during the the Commit phase of Updating. This is a good place to put network requests by comparing any changes to state, and conditionally making a request if state has changed. The method componentDidUpdate i called immediately after a component updates, but not when it initially renders.
+- [x] Explain the details of a Higher Order Component?
+  - HOC's are components that return components. These can be used when a certain component pattern needs to be reused across an app. For example, you might have a bunch of different button components but with slightly differing actions when pressed. You might be able to create an HOC that takes a few arguments, the one that make each button unique, and then returns a customized button component. You will have increased DRYness of your app and simplified logic as well.
 - [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+  - You can style components in the standard CSS class way, i.e. by adding a className prop to components and importing a css file into your component. You can also import a library of pre-styled components, for example Bulma or Bootstrap. Finally, you can use a library like styled-components which let's you write css in your javascript alongside the rest of your React code.
 
 ## Project Setup
 
